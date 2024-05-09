@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-from sys import argv
+import tmp/hidden_4
 if __name__ == "__main__":
-    args = argv[1:]
-    total = 0
-    for arg in args:
-        total += int(arg)
-print(total)
+    for i in dir(hidden_4):
+        if i[:2] != "__":
+            print("{}".format(i)
