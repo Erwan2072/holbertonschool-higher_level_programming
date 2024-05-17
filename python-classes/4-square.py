@@ -10,7 +10,6 @@ class Square:
         self.__size = size
 
     @property
-    """attribut une valeur au carré"""
     def size(self):
         return self.__size
 
