@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ contain python code """
 
+
 class Square:
     """ contain Private instance attribute: size"""
 
