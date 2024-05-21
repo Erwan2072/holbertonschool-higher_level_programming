@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" containpython code"""
+"""Contain python code"""
 
 
 class Rectangle:
-    """contain a simple class of rectangle"""
+    """Contain a simple class of rectangle"""
 
-    def __init__(self, height=0, width=0):
+    def __init__(self, width=0, height=0):
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         if width < 0:
@@ -18,27 +18,26 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = height
 
-        @property
-        def width(self):
-            return self.__width
+    @property
+    def width(self):
+        return self.__width
 
-        @width.setter
-        def width(self, value):
-            if not isinstance(width, int):
-                raise TypeError("width must be an integer")
-            if width < 0 :
-                raise ValueError("width must be >= 0")
-            self.__width = value
+    @width.setter
+    def width(self, value):
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
 
-        @property
-        def height(self):
-            return self.__height
+    @property
+    def height(self):
+        return self.__height
 
-        @height.setter
-        def height(self, value):
-            if not isinstance(height, int):
-                raise TypeError("height must be an integer")
-            if height < 0 :
-                raise ValueError("height must be >= 0")
-            self.__height = value
-
+    @height.setter
+    def height(self, value):
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
