@@ -1,0 +1,46 @@
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+>>> text_indentation("Erwan Lebreton")
+Erwan Lebreton
+
+>>> text_indentation("Erwan. Lebreton")
+Erwan.
+<BLANKLINE>
+Lebreton
+
+>>> text_indentation("Erwan.")
+Erwan.
+<BLANKLINE>
+
+>>> text_indentation("Lebreton? Erwan")
+Lebreton?
+<BLANKLINE>
+Erwan
+
+>>> text_indentation("Lebreton: Erwan")
+Lebreton:
+<BLANKLINE>
+Erwan
+
+>>> text_indentation("Erwan! Lebreton")
+Erwan! Lebreton
+
+>>> text_indentation(12)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation("My", "Self")
+Traceback (most recent call last):
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("Hello.       World")
+Hello.
+<BLANKLINE>
+World
+
+>>> text_indentation("")
+
