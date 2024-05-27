@@ -14,16 +14,17 @@ class Student:
         Retrieves a dictionary representation of a Student instance.
 
         Args:
-            attrs (list): List of attribute names to retrieve. If None, all attributes are retrieved.
+            attrs (list): List of attribute names to retrieve.
+            If None, all attributes are retrieved.
 
         Returns:
             dict: A dictionary representation of the Student instance.
         """
         if attrs is None:
-           return self.__dict__
+            return self.__dict__
         else:
             result = {}
-            for attr in attrs:
-                if hasattr(self, attr):
-                    result[attr] = getattr(self, attr)
-            return result
+        for attr in attrs:
+            if hasattr(self, attr):
+                result[attr] = getattr(self, attr)
+        return result

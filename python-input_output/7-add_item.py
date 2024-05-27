@@ -15,6 +15,7 @@ def add_arguments_to_list(filename, *args):
     new_list = existing_list + list(args)
     save_to_json_file(new_list, filename)
 
+
 if __name__ == "__main__":
     filename = "add_item.json"
     arguments = sys.argv[1:]  # Exclude the script name from the arguments
