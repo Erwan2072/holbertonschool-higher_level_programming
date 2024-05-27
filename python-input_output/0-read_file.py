@@ -7,6 +7,6 @@ def read_file(filename=""):
         Reads and prints the content of a file line by line.
     """
 
-    with open(filename, "read", encoding="utf-8") as file:
+    with open(filename, "r", encoding="utf-8") as file:
         for line in file:
             print(line, end="")
