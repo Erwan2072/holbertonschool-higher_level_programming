@@ -10,15 +10,18 @@ def serialize_to_xml(dictionary, filename):
 
     root = ET.Element("data")
 
-    for key, value in dictionary.items():
-        child = ET.Element(key)
-        child.text = str(value)
+    def build_tree(d, parent):
+        for key, value in d.items():
+            if isinstance(value, dict):
+                child = ET.SubElement(parent, key)
+                build_tree(value, child)
+            else:
+                child = ET.SubElement(parent, key)
+                child.text = str(value)
 
-    """Create an ElementTree object from the root element"""
+    build_tree(dictionary, root)
     tree = ET.ElementTree(root)
-
-    """Write the XML tree to the specified file"""
-    tree.write(filename, encoding='utf-8', xml_declaration=True)
+    tree.write(filename)
 
 
 def deserialize_from_xml(filename):
@@ -26,10 +29,13 @@ def deserialize_from_xml(filename):
     tree = ET.parse(filename)
     root = tree.getroot()
 
-    dictionary = {}
+    def parse_tree(element):
+        d = {}
+        for child in element:
+            if len(child):
+                d[child.tag] = parse_tree(child)
+            else:
+                d[child.tag] = child.text
+        return d
 
-    """Iterate through the XML elements and reconstruct the dictionary"""
-    for child in root:
-        dictionary[child.tag] = child.text
-
-    return dictionary
+    return parse_tree(root)
