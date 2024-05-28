@@ -32,7 +32,12 @@ class CustomObject:
     def deserialize(cls, filename):
         try:
             with open(filename, 'rb') as file:
-                return pickle.load(file)
-        except (FileNotFoundError, pickle.UnpicklingError) as e:
-            print(f"Deserialization error: {e}")
+                obj = pickle.load(file)
+                if isinstance(obj, cls):
+                    return obj
+                else:
+                    print("Deserialized object is not of type CustomObject.")
+                    return None
+        except Exception as e:
+            print(f"An error occurred while deserializing the object: {e}")
             return None
