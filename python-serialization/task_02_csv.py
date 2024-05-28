@@ -9,14 +9,11 @@ def convert_csv_to_json(csv):
     """Converts data from a CSV file to a JSON file."""
     try:
         """Initialize an empty list to store the CSV data"""
-        data = []
 
         with open(csv, "r") as csv_file:
-            """Create a CSV DictRead object"""
+            """Create a CSV DictReader object"""
             csv_read = csv.DictReader(csv_file)
-
-            for row in csv_read:
-                data.append(row)
+            data = [ row for row in csv_read]
 
         """ write the json file"""
         with open("data.json", "w") as json_file:
