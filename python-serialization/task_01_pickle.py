@@ -1,4 +1,4 @@
-#!/usr/bin/en python3
+#!/usr/bin/env python3
 """Pickling Custom Classes"""
 
 import pickle
@@ -19,9 +19,10 @@ class CustomObject:
         """
         print(f"Name: {self.name}")
         print(f"Age: {self.age}")
-        print(f"Is Student: {self.is_student}")
+        print("Is Student: {self.is_student}")
 
     def serialize(self, filename):
+        """serialize"""
         try:
             with open(filename, 'wb') as file:
                 pickle.dump(self, file)
