@@ -1,30 +1,24 @@
-#!/usr/bin/env python3
-"""Converting CSV Data to JSON Format"""
+#!/usr/bin/python3
+"""Contains the Converting CSV Data to JSON Format"""
+
 
 import csv
 import json
 
 
-def convert_csv_to_json(csv_file):
-    """Converts data from a CSV file to a JSON file."""
+def convert_csv_to_json(csv_filename):
+    """csv to json """
     try:
-        """Initialize an empty list to store the CSV data"""
-        data = []
+        with open(csv_filename, 'r', newline='') as csv_file:
+            csv_reader = csv.DictReader(csv_file)
+            data = [row for row in csv_reader]
 
-        with open(csv, "r") as csv_file:
-            """Create a CSV DictRead object"""
-            csv_read = csv.DictReader(csv_file)
-
-            for row in csv_read:
-                data.append(row)
-
-        """ write the json file"""
-        with open("data.json", "w") as json_file:
+        with open('data.json', 'w') as json_file:
             json.dump(data, json_file, indent=4)
-        return True
 
+        return True
     except FileNotFoundError:
         return False
     except Exception as e:
-        print("An error occurred: {}".format(e))
+        print(f"is there error{e}")
         return False
