@@ -10,7 +10,7 @@ def convert_csv_to_json(csv):
     try:
         """Initialize an empty list to store the CSV data"""
 
-        with open(csv, "r") as csv_file:
+        with open(csv, "r", newline='') as csv_file:
             """Create a CSV DictReader object"""
             csv_read = csv.DictReader(csv_file)
             data = [ row for row in csv_read]
