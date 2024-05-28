@@ -5,7 +5,9 @@ import pickle
 
 
 class CustomObject:
-    """Serializes the current instance of CustomObject to the specified file."""
+    """Serializes the current instance of
+        CustomObject to the specified file.
+    """
     def __init__(self, name, age, is_student):
         self.name = name
         self.age = age
@@ -34,4 +36,3 @@ class CustomObject:
         except (FileNotFoundError, pickle.UnpicklingError) as e:
             print(f"Deserialization error: {e}")
             return None
-
