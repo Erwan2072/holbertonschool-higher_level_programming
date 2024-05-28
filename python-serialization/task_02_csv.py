@@ -16,10 +16,10 @@ def convert_csv_to_json(csv):
             data = [ row for row in csv_read]
 
         """ write the json file"""
-        with open("data.json", "w") as json_file:
+        with open('data.json', 'w') as json_file:
             json.dump(data, json_file, indent=4)
-        return True
 
+        return True
     except FileNotFoundError:
         return False
     except Exception as e:
