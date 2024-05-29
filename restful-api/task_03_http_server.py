@@ -8,6 +8,7 @@ import socketserver
 
 PORT = 8000
 
+
 class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         # Log request path for debugging
@@ -37,7 +38,8 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
-            info = {"version": "1.0", "description": "A simple API built with http.server"}
+            info = {"version": "1.0", "description":
+                    "A simple API built with http.server"}
             response = json.dumps(info)
             self.wfile.write(response.encode('utf-8'))
         else:
@@ -48,11 +50,6 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             response = json.dumps(error)
             self.wfile.write(response.encode('utf-8'))
 
-        # Log the response for debugging
-        print(f"Responding with: {response}")
-
-    def log_message(self, format, *args):
-        return  # Override to disable default logging
 
 # Configuration et démarrage du serveur
 with socketserver.TCPServer(("", PORT), SimpleHTTPRequestHandler) as httpd:

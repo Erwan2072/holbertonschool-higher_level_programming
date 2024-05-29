@@ -21,6 +21,7 @@ def fetch_and_print_posts():
         for post in posts:
             print(post['title'])
 
+
 def fetch_and_save_posts():
     url = 'https://jsonplaceholder.typicode.com/posts'
     response = requests.get(url)
@@ -29,7 +30,8 @@ def fetch_and_save_posts():
         posts = response.json()
 
         # Structure the data into a list of dictionaries
-        structured_data = [{'id': post['id'], 'title': post['title'], 'body': post['body']} for post in posts]
+        structured_data = [{'id': post['id'], 'title': post['title'],
+                            'body': post['body']} for post in posts]
 
         # Write the data into a CSV file
         with open('posts.csv', 'w', newline='', encoding='utf-8') as csvfile:
