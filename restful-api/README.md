@@ -24,6 +24,7 @@ In our interconnected digital age, RESTful APIs play a pivotal role in the integ
 Developing a solid understanding of how to consume, develop, secure, and document these APIs equips you with a critical skill set. It’s a blend of understanding both the technical intricacies and the larger design picture, ensuring seamless and efficient communication in the digital world.
 
 ## REST API Conceptual Diagram:
+'''
 +-------+           +-------+           +---------+           +---------+
 |       |  Request  |       |  Process  |         |  Fetch/   |         |
 |       |   ----->  |       |  -------> |         |  Modify   |         |
@@ -32,6 +33,8 @@ Developing a solid understanding of how to consume, develop, secure, and documen
 |       |  Response |       |  Return   |         |           |         |
 +-------+           +-------+           +---------+           +---------+
   Client            Web Server           API Server           Database
+'''
+
 Components:
 
 Client: The requester of the service, often a web browser or application.
