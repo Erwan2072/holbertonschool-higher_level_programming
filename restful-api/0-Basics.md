@@ -3,11 +3,11 @@
 ## Definition
 
 ***HTTP(S)***
-. H > Hyper
-. T > Text
-. T > Transfer
-. P > Protocol
-. S > Secure
+- H > Hyper
+- T > Text
+- T > Transfer
+- P > Protocol
+- S > Secure
 
 ## 1-Difference
 
@@ -130,10 +130,10 @@ RESTful API designers rarely interact with the CONNECT HTTP request method
 
 The most common codes are:
 
-. 200: request success;
-. 301 and 302: redirect, permanent and temporary respectively;
-. 401: unauthenticated user;
-. 403: access denied;
-. 404: resource not found;
-. 500, 502 and 503: server errors;
-. 504: The server did not respond.
+- 200: request success;
+- 301 and 302: redirect, permanent and temporary respectively;
+- 401: unauthenticated user;
+- 403: access denied;
+- 404: resource not found;
+- 500, 502 and 503: server errors;
+- 504: The server did not respond.
