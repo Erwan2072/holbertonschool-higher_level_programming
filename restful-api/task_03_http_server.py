@@ -11,7 +11,8 @@ PORT = 8000
 
 class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
-        # Log request path for debugging
+        """Log request path for debugging"""
+
         print(f"Received GET request for path: {self.path}")
 
         if self.path == '/':
@@ -51,7 +52,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(response.encode('utf-8'))
 
 
-# Configuration et démarrage du serveur
+"""Configuration et démarrage du serveur"""
 if __name__ == "__main__":
     with socketserver.TCPServer(("", PORT), SimpleHTTPRequestHandler) as httpd:
         print(f"Serving on port {PORT}")
