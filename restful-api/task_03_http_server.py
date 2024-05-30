@@ -52,6 +52,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
 
 # Configuration et démarrage du serveur
-with socketserver.TCPServer(("", PORT), SimpleHTTPRequestHandler) as httpd:
-    print(f"Serving on port {PORT}")
-    httpd.serve_forever()
+if __name__ == "__main__":
+    with socketserver.TCPServer(("", PORT), SimpleHTTPRequestHandler) as httpd:
+        print(f"Serving on port {PORT}")
+        httpd.serve_forever()
