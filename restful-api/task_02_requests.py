@@ -17,7 +17,7 @@ def fetch_and_print_posts():
     if response.status_code == 200:
         posts = response.json()
 
-        # Iterate through the parsed JSON data and print titles
+        """Iterate through the parsed JSON data and print titles"""
         for post in posts:
             print(post['title'])
 
@@ -29,11 +29,11 @@ def fetch_and_save_posts():
     if response.status_code == 200:
         posts = response.json()
 
-        # Structure the data into a list of dictionaries
+        """Structure the data into a list of dictionaries"""
         structured_data = [{'id': post['id'], 'title': post['title'],
                             'body': post['body']} for post in posts]
 
-        # Write the data into a CSV file
+        """Write the data into a CSV file"""
         with open('posts.csv', 'w', newline='', encoding='utf-8') as csvfile:
             fieldnames = ['id', 'title', 'body']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
