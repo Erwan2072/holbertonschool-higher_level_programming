@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Develop a Simple API using Python with Flask"""
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, logging
 
 app = Flask(__name__)
 
