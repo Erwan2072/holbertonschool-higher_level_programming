@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Develop a simple API using Python with the `http.server`"""
 
+
 import http.server
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
