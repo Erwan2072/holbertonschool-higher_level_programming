@@ -1,4 +1,3 @@
-task 2 mais modifier vos repo :
   name: Construction et Déploiement de l'Image Docker
   on:
     push:
