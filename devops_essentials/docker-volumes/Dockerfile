@@ -1,4 +1,15 @@
+FROM python:3.8-slim
 
-FROM alpine:latest
-VOLUME /data
-CMD echo "Hello,World!"
+WORKDIR /app
+
+COPY . /app
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 80
+
+ENV NAME World
+
+CMD ["python", "app.py"]
+
+VOLUME ["/data"]
