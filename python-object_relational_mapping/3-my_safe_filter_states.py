@@ -1,15 +1,24 @@
 #!/usr/bin/python3
+"""write one that is safe from MySQL injections!"""
+
 import MySQLdb
-import sys
+from sys  import argv
+
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3])
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name=%s ORDER BY id ASC",
-                (sys.argv[4],))
-    rows = cur.fetchall()
+    connexion = MySQLdb.connect(
+        host="localhost", port=3306, user=argv[1], passwd=argv[2], db=argv[3]
+    )
+    'Sélectionne le texte qui précède le point-virgule (si existe)'
+    'dans argv[4] pour éviter les injections SQL.'
+    argv_4 = argv[4].split(';')[0]
+
+    curs = connexion.cursor()
+    curs.execute("""SELECT * FROM states
+                 WHERE BINARY name LIKE '{}%'
+                 ORDER BY id;""".format(argv_4))
+    rows = curs.fetchall()
     for row in rows:
         print(row)
-    cur.close()
-    db.close()
+    curs.close()
+    connexion.close()

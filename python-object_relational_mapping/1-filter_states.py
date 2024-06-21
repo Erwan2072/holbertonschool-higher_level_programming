@@ -1,8 +1,7 @@
 
 #!/usr/bin/python3
 """
-This module connects to a MySQL database and retrieves
-all states with names starting with 'N', sorted by id in ascending order.
+    script that lists all states with a name starting with N
 """
 
 import MySQLdb
@@ -16,7 +15,8 @@ if __name__ == "__main__":
                          db= argv[3])
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cur.execute("""SELECT * FROM states
+                 WHERE BINARY name LIKE 'N%' ORDER BY id;""")
     rows = cur.fetchall()
     for row in rows:
         print(row)
