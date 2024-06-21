@@ -1,8 +1,14 @@
 #!/usr/bin/python3
+"""
+This script defines a SQLAlchemy ORM model for the 'states' table.
+It maps the `State` class to the 'states' table, allowing easy database
+interactions using Python objects.
+"""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
+
 
 class State(Base):
     __tablename__ = 'states'
