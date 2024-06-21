@@ -2,15 +2,19 @@
 """write one that is safe from MySQL injections!"""
 
 import MySQLdb
-from sys  import argv
+from sys import argv
 
 
 if __name__ == "__main__":
     connexion = MySQLdb.connect(
-        host="localhost", port=3306, user=argv[1], passwd=argv[2], db=argv[3]
+        host="localhost",
+        port=3306,
+        user=argv[1],
+        passwd=argv[2],
+        db=argv[3]
     )
-    'Sélectionne le texte qui précède le point-virgule (si existe)'
-    'dans argv[4] pour éviter les injections SQL.'
+    # Selects the text preceding the semicolon (if any)
+    # in argv[4] to prevent SQL injections.
     argv_4 = argv[4].split(';')[0]
 
     curs = connexion.cursor()
