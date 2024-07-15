@@ -1,5 +1,5 @@
+###Python - Server-Side Rendering
 
-      <div class="panel panel-default" id="project-description">
   <div class="panel-body">
     <p>Server-side rendering is a powerful technique where web pages are generated on the server and sent to the client as fully formed HTML. This contrasts with client-side rendering, where the browser builds the web page using JavaScript and dynamic data. Through this project, you will learn how to implement SSR using Python and Flask, leveraging the Jinja templating engine to create dynamic, efficient, and SEO-friendly web applications.</p>
 
@@ -36,36 +36,11 @@
 </div>
 
 
-
-
-
-
-
-          <h2 class="gap">Tasks</h2>
-
-    <div data-role="task30419" data-position="1" id="task-num-0">
-      <div class="panel panel-default task-card " id="task-30419">
-  <span id="user_id" data-id="8687"></span>
-
   <div class="panel-heading panel-heading-actions">
     <h3 class="panel-title">
       0. Creating a Simple Templating Program
     </h3>
 
-    <div>
-        <span class="label label-info">
-          mandatory
-        </span>
-    </div>
-  </div>
-
-  <div class="panel-body">
-    <span id="user_id" data-id="8687"></span>
-
-    <!-- Progress vs Score -->
-
-    <!-- Task Body -->
-    <p>In this task, you will create a Python function that generates personalized invitation files from a template with placeholders and a list of objects. Each output file should be named sequentially, starting from 1. You will also implement specific error handling for various edge cases.</p>
 
 <h3>Objective</h3>
 
